@@ -1,0 +1,108 @@
+body {
+    background-color:lightgrey;
+}
+.titleBar {
+    margin-left: 10px;
+    margin-bottom: -15px;
+    margin-top: -15px;
+    display: flex; /* Activa Flexbox */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content: space-between; /* Espacia los elementos a los extremos */
+    width: 1250px;
+}
+
+.titleBar img {
+    width: 69px;
+    height: 69px;
+    border-radius: 5px;
+}
+
+.titleBar h1 {
+    background-color: white;
+    width: 86%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 1px;
+    border-bottom: 10px;
+}
+
+.cart{
+    background-color: rgba(0, 128, 0, 0.568);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 2px;
+}
+
+.cart:hover{
+    background-color: green;
+}
+
+.container {
+    border-top: 1px black;
+    display: flex; /* Activa Flexbox */
+    flex-direction: row; /* Asegúrate de que los hijos se alineen en fila */
+    justify-content: flex-start; /* Espacia los elementos a los extremos */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    width: 100%; /* O el ancho que desees */
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 5px;
+    width: 80%;
+    height: auto;
+    margin-left: 5px;
+}
+
+.ButtonBox {
+    width: 100px; /* Ancho fijo para la ButtonBox */
+    height: 300px;
+    border-color: 1px solid gray;
+    border-radius: 10px;
+    padding: 50px;
+    padding-top: 0px;
+    margin: 10px;
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Alinea los botones en una columna */
+    align-items: center; /* Centra los botones horizontalmente */
+    background-color: white;
+}
+.click {
+    margin: 5px 0;
+    border-radius: 5px;
+    align-content: right;
+    width: 180px;
+    height: 50px;
+}
+
+.AddButton {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+
+.CardContainer {
+    width: 249px; /* Ajusta el ancho según sea necesario */
+    height: 400px;
+    margin: 5px; /* Espacio entre los contenedores */
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Alinea los botones en una columna */
+    align-items: center; /* Centra los botones horizontalmente */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.CardContainer img {
+    width: 250px;
+    height: 230px;
+}
+ 
+
