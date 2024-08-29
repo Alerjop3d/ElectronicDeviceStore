@@ -1,19 +1,22 @@
-const main = document.getElementById("main");
-const ShowPhonesButton = document.getElementById("phones");
-const ShowTabletsButton = document.getElementById("tablets");
-const ShowLaptopsButton = document.getElementById("laptops");
-const ClearButton = document.getElementById("cleaner");
+const main = document.getElementById("main")
+const sidebar = document.getElementById('sidebar')
+const toggleButtonCart = document.getElementById('shoppingCartButton')
+const ShowPhonesButton = document.getElementById("phones")
+const ShowTabletsButton = document.getElementById("tablets")
+const ShowLaptopsButton = document.getElementById("laptops")
+const ClearButton = document.getElementById("cleaner")
 
 const fetchElectronicArticles = async () => {
   let resp = await fetch("./devices.json")
   let data = await resp.json()
   return data
 }
+const shoppingCart = []
 
 const formatItemForEach = (TypeDevice) => {
   TypeDevice.forEach(el => {
     const productCard = `
-      <div class="CardContainer">
+      <div class="productCard">
         <img src='${el.img}'/>
         <h3>${el.name}</h3>
         <p>Price:${el.price}$</p>
@@ -21,12 +24,13 @@ const formatItemForEach = (TypeDevice) => {
       </div>
     `
     main.insertAdjacentHTML('beforeend', productCard)
-  })
+  }
+)
 
   const addButtons = document.getElementsByClassName("AddButton")
   const arraybutton = Array.from(addButtons)
   arraybutton.forEach(boton => {
-  boton.addEventListener("click", SortDevice)
+  boton.addEventListener("click", addButtonDevice)
   })
 }
 
@@ -61,6 +65,11 @@ const searchLaptops = async () => {
 
 const clear = () => main.innerHTML = ''
 
+const tooglefunc = () => {
+  sidebar.classList.toggle('show')
+}
+
+toggleButtonCart.addEventListener("click", tooglefunc)
 ShowPhonesButton.addEventListener("click", searchPhones)
 ShowTabletsButton.addEventListener("click", searchTablets)
 ShowLaptopsButton.addEventListener("click", searchLaptops)
@@ -68,8 +77,16 @@ ClearButton.addEventListener("click", all)
 
 all() 
 
-const SortDevice = () => {
-  alert("Device added!"); // Esto es solo un ejemplo, reemplázalo con tu lógica
-};
+const addButtonDevice = (el) => {
+  shoppingCart.push({
+    image: el.img,
+    name: el.name,
+    price: el.price
+  })
+}
+
+
+
+
 
 
