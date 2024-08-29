@@ -1,7 +1,9 @@
 body {
     background-color:lightgrey;
 }
-.titleBar {
+
+/* main title bar and shopping cart button */
+.mainBar {
     margin-left: 10px;
     margin-bottom: -15px;
     margin-top: -15px;
@@ -11,39 +13,60 @@ body {
     width: 1250px;
 }
 
-.titleBar img {
-    width: 69px;
-    height: 69px;
+.mainBar img {
+    width: 58px;
+    height: 58px;
     border-radius: 5px;
 }
 
-.titleBar h1 {
+.mainBar h1 {
     background-color: white;
-    width: 86%;
+
+    width: 88%;
     border-radius: 5px;
     padding: 10px;
     margin-left: 1px;
     border-bottom: 10px;
 }
 
-.cart{
+#shoppingCartButton{
     background-color: rgba(0, 128, 0, 0.568);
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 2px;
+    padding: 13px;
 }
 
-.cart:hover{
+#shoppingCartButton:hover{
     background-color: green;
+    color: white;
 }
 
-.container {
-    border-top: 1px black;
+/* Buttons of categories and cards of products (with buttons) */
+.cardContainer {
     display: flex; /* Activa Flexbox */
     flex-direction: row; /* Asegúrate de que los hijos se alineen en fila */
     justify-content: flex-start; /* Espacia los elementos a los extremos */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     width: 100%; /* O el ancho que desees */
+}
+
+.productCard {
+    width: 249px; /* Ajusta el ancho según sea necesario */
+    height: 400px;
+    margin: 5px; /* Espacio entre los contenedores */
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Alinea los botones en una columna */
+    align-items: center; /* Centra los botones horizontalmente */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.productCard img {
+    width: 250px;
+    height: 230px;
 }
 
 #main {
@@ -52,7 +75,8 @@ body {
     flex-wrap: wrap;
     border-radius: 10px;
     padding: 5px;
-    width: 80%;
+    width: 90%;
+    max-width: 90%;
     height: auto;
     margin-left: 5px;
 }
@@ -77,32 +101,86 @@ body {
     width: 180px;
     height: 50px;
 }
+.click:hover {
+    background-color: green;
+    color: white;
+}
 
 .AddButton {
     width: 200px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: lightgrey;
 }
+.AddButton:hover{
+    background-color:rgb(120, 167, 255);
+    color: white;
+}
 
-.CardContainer {
-    width: 249px; /* Ajusta el ancho según sea necesario */
-    height: 400px;
-    margin: 5px; /* Espacio entre los contenedores */
-    font-size: 15px;
-    border-radius: 10px;
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    left: -350px;
+    top: 0;
+    background-color:rgb(52, 150, 52);
+    padding: 0px;
+    transition: left 0.5s ease;
+}
+
+.sidebar.show{
+    left: 0;
+}
+.sidebar h3 {
+    width: 89%;
+    text-align: center;
     background-color: white;
-    display: flex; /* Activa Flexbox */
-    flex-direction: column; /* Alinea los botones en una columna */
-    align-items: center; /* Centra los botones horizontalmente */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: -5px;
 }
 
-.CardContainer img {
-    width: 250px;
-    height: 230px;
+#contentCart {
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(110, 182, 110);
+    border-radius: 5px;
+    height: 100%;
+    width: 300px;
+    padding: 15px; /* Agrega un poco de padding para que no esté pegado al borde */
+    margin: 10px;
 }
- 
+
+.devicesInCart {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-color:1px black ;
+    border-radius: 5px;
+    width: auto;
+    padding: 10px; /* Agrega un poco de padding para que no esté pegado al borde */
+}
+
+.devicesInCart img {
+    width: 50px;
+    height: auto;
+    float: right;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.textbox {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+    height: auto; /* Usa min-height para permitir que el contenido se ajuste */
+}
+
+.textBox p {
+    margin: 0; /* Elimina márgenes para evitar superposición */
+    color: black;
+    margin-bottom: 0px; /* Espacio entre la imagen y el texto */
+}
+
 
