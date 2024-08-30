@@ -1,6 +1,5 @@
 body {
     background-color:lightgrey;
-    padding-left: 5px;
 }
 
 /* main title bar and shopping cart button */
@@ -8,7 +7,7 @@ body {
     display: flex; /* Activa Flexbox */
     align-items: center; /* Alinea verticalmente los elementos al centro */
     justify-content: space-between; /* Espacia los elementos a los extremos */
-    width: 100%;
+    width: 1265px;
     
 }
 
@@ -31,6 +30,7 @@ body {
     background-color: rgba(0, 128, 0, 0.568);
     border-radius: 10px;
     padding: 13px;
+    margin-right: 10px ;
 }
 
 #shoppingCartButton:hover{
@@ -50,9 +50,10 @@ body {
 }
 
 .productCard {
-    width: 240px; /* Ajusta el ancho según sea necesario */
+    width: 260px;
+    max-width: 260px; 
     height: 400px;
-    margin: 3px; /* Espacio entre los contenedores */
+    margin: 4px; /* Espacio entre los contenedores */
     font-size: 15px;
     border-radius: 10px;
     background-color: white;
@@ -71,10 +72,9 @@ body {
 
 #main {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
     border-radius: 10px;
-    margin-left: 10px;
     overflow-y: auto;
     width: 100%; /* O un ancho fijo como 1200px */
     max-width: 100%; /* Establecer un ancho máximo */
@@ -82,13 +82,12 @@ body {
 }
 
 .ButtonBox {
-    width: 215px; /* Ancho fijo para la ButtonBox */
+    width: 216px; /* Ancho fijo para la ButtonBox */
     height: auto;
     margin-top: 4px;
     margin-left: 0px;
     background-color: white;
     padding-bottom: 15px;
-    border-color: 1px solid gray;
     display: flex; /* Activa Flexbox */
     flex-direction: column; /* Alinea los botones en una columna */
     align-items: center; /* Centra los botones horizontalmente */
@@ -154,10 +153,11 @@ body {
 .devicesInCart {
     display: flex;
     flex-direction: row;
+    justify-content: space-between; /* Espacia los elementos a los extremos */
     background-color: white;
     border-color:1px black ;
     border-radius: 5px;
-    height: auto;
+    height: 60px;
     width: 100%;
     margin: 5px;
 }
@@ -176,6 +176,24 @@ body {
     line-height: 0.005; /* Ajusta el espaciado entre líneas */
     margin: 0px; /* Cambiado a 0 para evitar superposición */
     padding: 10px 0; /* Agregar padding si es necesario */
+}
+
+.quitOrAddButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:5px;
+    margin-right: 5px;
+    justify-content: space-between;
+
+}
+
+.add-quit {
+
+    width: 20px;
+    height: 20px;
+    line-height: 0.8;
+    border-radius: 10px;
 }
 
 

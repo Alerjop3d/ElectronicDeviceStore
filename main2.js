@@ -32,12 +32,12 @@ const addButtonDevice = (event) => {
         name: button.getAttribute('data-name'),
         price: button.getAttribute('data-price')
     });
-    updateCartDisplay(); // Actualiza la visualización del carrito
+    updateCartDisplay(); 
 };
 
 const updateCartDisplay = () => {
     const contentCart = document.getElementById('contentCart');
-    contentCart.innerHTML = ''; // Limpia el contenido del carrito
+    contentCart.innerHTML = ''
     shoppingCart.forEach(el => {
         const devicesInCart = `
         <div class='devicesInCart'>
@@ -46,8 +46,12 @@ const updateCartDisplay = () => {
             <p>${el.name}</p>
             <p>Subtotal: ${el.price}$</p>
           </div>
+          <div class='quitOrAddButtons'>
+            <button class="add-quit">+</button>
+            <button class="add-quit">-</button>
+          </div>
         </div>
-      `;
+      `
         contentCart.insertAdjacentHTML('beforeend', devicesInCart);
     });
 };
