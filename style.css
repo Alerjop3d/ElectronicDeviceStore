@@ -1,16 +1,15 @@
 body {
     background-color:lightgrey;
+    padding-left: 5px;
 }
 
 /* main title bar and shopping cart button */
 .mainBar {
-    margin-left: 10px;
-    margin-bottom: -15px;
-    margin-top: -15px;
     display: flex; /* Activa Flexbox */
     align-items: center; /* Alinea verticalmente los elementos al centro */
     justify-content: space-between; /* Espacia los elementos a los extremos */
-    width: 1250px;
+    width: 100%;
+    
 }
 
 .mainBar img {
@@ -21,11 +20,10 @@ body {
 
 .mainBar h1 {
     background-color: white;
-
-    width: 88%;
+    width: 100%;
     border-radius: 5px;
     padding: 10px;
-    margin-left: 1px;
+    margin: 3px;
     border-bottom: 10px;
 }
 
@@ -38,6 +36,8 @@ body {
 #shoppingCartButton:hover{
     background-color: green;
     color: white;
+    transform: scale(1.05);
+    transition: 0.3s ease;
 }
 
 /* Buttons of categories and cards of products (with buttons) */
@@ -45,14 +45,14 @@ body {
     display: flex; /* Activa Flexbox */
     flex-direction: row; /* Asegúrate de que los hijos se alineen en fila */
     justify-content: flex-start; /* Espacia los elementos a los extremos */
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    align-items:flex-start; /* Alinea los elementos en la parte superior */
     width: 100%; /* O el ancho que desees */
 }
 
 .productCard {
-    width: 249px; /* Ajusta el ancho según sea necesario */
+    width: 240px; /* Ajusta el ancho según sea necesario */
     height: 400px;
-    margin: 5px; /* Espacio entre los contenedores */
+    margin: 3px; /* Espacio entre los contenedores */
     font-size: 15px;
     border-radius: 10px;
     background-color: white;
@@ -65,40 +65,37 @@ body {
 }
 
 .productCard img {
-    width: 250px;
-    height: 230px;
+    width: 215px;
+    height: 200px;
 }
 
 #main {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     border-radius: 10px;
-    padding: 5px;
-    width: 90%;
-    max-width: 90%;
-    height: auto;
-    margin-left: 5px;
+    margin-left: 10px;
+    overflow-y: auto;
+    width: 100%; /* O un ancho fijo como 1200px */
+    max-width: 100%; /* Establecer un ancho máximo */
+    min-height: 100vh; /* Asegúrate de que el contenedor tenga al menos la altura de la ventana */
 }
 
 .ButtonBox {
-    width: 100px; /* Ancho fijo para la ButtonBox */
-    height: 300px;
+    width: 215px; /* Ancho fijo para la ButtonBox */
+    height: auto;
+    margin-top: 4px;
+    margin-left: 0px;
+    background-color: white;
+    padding-bottom: 15px;
     border-color: 1px solid gray;
-    border-radius: 10px;
-    padding: 50px;
-    padding-top: 0px;
-    margin: 10px;
     display: flex; /* Activa Flexbox */
     flex-direction: column; /* Alinea los botones en una columna */
     align-items: center; /* Centra los botones horizontalmente */
-    background-color: white;
 }
 .click {
-    margin: 5px 0;
-    border-radius: 5px;
-    align-content: right;
-    width: 180px;
+    margin: 1px 0;
+    width: 80%;
     height: 50px;
 }
 .click:hover {
@@ -160,8 +157,9 @@ body {
     background-color: white;
     border-color:1px black ;
     border-radius: 5px;
-    width: auto;
-    padding: 10px; /* Agrega un poco de padding para que no esté pegado al borde */
+    height: auto;
+    width: 100%;
+    margin: 5px;
 }
 
 .devicesInCart img {
@@ -169,18 +167,15 @@ body {
     height: auto;
     float: right;
     border-radius: 5px;
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
-.textbox {
-    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
-    height: auto; /* Usa min-height para permitir que el contenido se ajuste */
-}
 
 .textBox p {
-    margin: 0; /* Elimina márgenes para evitar superposición */
     color: black;
-    margin-bottom: 0px; /* Espacio entre la imagen y el texto */
+    font-weight: 500;
+    line-height: 0.005; /* Ajusta el espaciado entre líneas */
+    margin: 0px; /* Cambiado a 0 para evitar superposición */
+    padding: 10px 0; /* Agregar padding si es necesario */
 }
 
 

@@ -47,14 +47,15 @@ const updateCartDisplay = () => {
             <p>Subtotal: ${el.price}$</p>
           </div>
         </div>
-        
       `;
         contentCart.insertAdjacentHTML('beforeend', devicesInCart);
     });
 };
 
 const filterAndDisplayDevices = async (type) => {
-    main.innerHTML = '';
+    while (main.firstChild) {
+      main.removeChild(main.firstChild);
+    }
     const electronicArticles = await fetchElectronicArticles();
     const filteredArticles = electronicArticles.filter(el => el.type === type);
     formatItemForEach(filteredArticles);
@@ -62,7 +63,9 @@ const filterAndDisplayDevices = async (type) => {
 
 /* Show all main devices */
 const all = async () => {
-    main.innerHTML = '';
+    while (main.firstChild) {
+      main.removeChild(main.firstChild);
+    }
     const electronicArticles = await fetchElectronicArticles();
     formatItemForEach(electronicArticles);
 };
