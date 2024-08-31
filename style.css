@@ -1,5 +1,6 @@
 body {
     background-color:lightgrey;
+
 }
 
 /* main title bar and shopping cart button */
@@ -7,7 +8,7 @@ body {
     display: flex; /* Activa Flexbox */
     align-items: center; /* Alinea verticalmente los elementos al centro */
     justify-content: space-between; /* Espacia los elementos a los extremos */
-    width: 1265px;
+    width: 96%;
     
 }
 
@@ -19,6 +20,7 @@ body {
 
 .mainBar h1 {
     background-color: white;
+    color:blue;
     width: 100%;
     border-radius: 5px;
     padding: 10px;
@@ -30,7 +32,7 @@ body {
     background-color: rgba(0, 128, 0, 0.568);
     border-radius: 10px;
     padding: 13px;
-    margin-right: 10px ;
+    margin-right: 11px ;
 }
 
 #shoppingCartButton:hover{
@@ -52,12 +54,15 @@ body {
 .productCard {
     width: 260px;
     max-width: 260px; 
-    height: 400px;
-    margin: 4px; /* Espacio entre los contenedores */
+    height: 300px;
+    padding-bottom: 25px;
+    margin: 5px; /* Espacio entre los contenedores */
     font-size: 15px;
+    line-height: 0.005;
     border-radius: 10px;
     background-color: white;
     display: flex; /* Activa Flexbox */
+    flex: 1 1 260px;
     flex-direction: column; /* Alinea los botones en una columna */
     align-items: center; /* Centra los botones horizontalmente */
     overflow: hidden;
@@ -94,7 +99,7 @@ body {
 }
 .click {
     margin: 1px 0;
-    width: 80%;
+    width: 95%;
     height: 50px;
 }
 .click:hover {
@@ -122,31 +127,34 @@ body {
     position: fixed;
     left: -350px;
     top: 0;
-    background-color:rgb(52, 150, 52);
-    padding: 0px;
+    background-color:steelblue;
     transition: left 0.5s ease;
 }
 
 .sidebar.show{
     left: 0;
 }
-.sidebar h3 {
-    width: 89%;
-    text-align: center;
-    background-color: white;
+#finishBuy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: -5px;
+    height: 40px;
+    width: 300px;
+    padding: 15px;
+
 }
 
 #contentCart {
     display: flex;
     flex-direction: column;
-    background-color:rgb(110, 182, 110);
+    align-items: center;
+    background-color: rgb(173, 198, 219);
     border-radius: 5px;
     height: 100%;
     width: 300px;
-    padding: 15px; /* Agrega un poco de padding para que no esté pegado al borde */
+    padding: 20px;
+    padding-top: 15px; /* Agrega un poco de padding para que no esté pegado al borde */
     margin: 10px;
 }
 
@@ -157,13 +165,13 @@ body {
     background-color: white;
     border-color:1px black ;
     border-radius: 5px;
-    height: 60px;
-    width: 100%;
+    height: 80px;
+    width: 110%;
     margin: 5px;
 }
 
 .devicesInCart img {
-    width: 50px;
+    width: auto;
     height: auto;
     float: right;
     border-radius: 5px;
@@ -190,10 +198,12 @@ body {
 
 .add-quit {
 
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     line-height: 0.8;
-    border-radius: 10px;
+    border-radius: 20px;
+    border-color: black;
+    font-weight:900;
 }
 
 

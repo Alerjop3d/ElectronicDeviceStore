@@ -4,8 +4,9 @@ const fetchElectronicArticles = async () => {
     let resp = await fetch("./devices.json")
     let data = await resp.json()
     return data
-};
+}
 
+/*Items main format DOM */
 const formatItemForEach = (TypeDevice) => {
     TypeDevice.forEach(el => {
         const productCard = `
@@ -26,7 +27,7 @@ const formatItemForEach = (TypeDevice) => {
 }
 
 const addButtonDevice = (event) => {
-    const button = event.currentTarget; // Obtiene el botón que fue clicado
+    const button = event.currentTarget // Obtiene el botón que fue clicado
     shoppingCart.push({
         image: button.getAttribute('data-img'),
         name: button.getAttribute('data-name'),
@@ -35,6 +36,7 @@ const addButtonDevice = (event) => {
     updateCartDisplay(); 
 };
 
+/*items shopping cart format DOM */
 const updateCartDisplay = () => {
     const contentCart = document.getElementById('contentCart');
     contentCart.innerHTML = ''
@@ -45,6 +47,7 @@ const updateCartDisplay = () => {
           <div class="textBox">
             <p>${el.name}</p>
             <p>Subtotal: ${el.price}$</p>
+            <p>quantity:</p>
           </div>
           <div class='quitOrAddButtons'>
             <button class="add-quit">+</button>
@@ -52,28 +55,30 @@ const updateCartDisplay = () => {
           </div>
         </div>
       `
-        contentCart.insertAdjacentHTML('beforeend', devicesInCart);
+        contentCart.insertAdjacentHTML('beforeend', devicesInCart)
     });
 };
 
 const filterAndDisplayDevices = async (type) => {
     while (main.firstChild) {
-      main.removeChild(main.firstChild);
+      main.removeChild(main.firstChild)
     }
     const electronicArticles = await fetchElectronicArticles();
-    const filteredArticles = electronicArticles.filter(el => el.type === type);
-    formatItemForEach(filteredArticles);
-};
+    const filteredArticles = electronicArticles.filter(el => el.type === type)
+    formatItemForEach(filteredArticles)
+}
+
 
 /* Show all main devices */
 const all = async () => {
     while (main.firstChild) {
       main.removeChild(main.firstChild);
     }
-    const electronicArticles = await fetchElectronicArticles();
-    formatItemForEach(electronicArticles);
-};
-all();
+    const electronicArticles = await fetchElectronicArticles()
+    formatItemForEach(electronicArticles)
+}
+all()
+
 
 /* Buttons of categories and shopping cart button */
 document.getElementById('phones').addEventListener('click', () => filterAndDisplayDevices("phone"));
