@@ -1,6 +1,19 @@
 body {
     background-color:lightgrey;
+    width: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
+
+.base {
+    display: flex; /* Cambiado a flex para centrar el contenido */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    align-items: center; /* Centra horizontalmente */
+    width: 100%; /* O el ancho que desees */
+    min-height: 100vh; /* Asegura que ocupe al menos la altura de la ventana */
 }
 
 /* main title bar and shopping cart button */
@@ -8,7 +21,7 @@ body {
     display: flex; /* Activa Flexbox */
     align-items: center; /* Alinea verticalmente los elementos al centro */
     justify-content: space-between; /* Espacia los elementos a los extremos */
-    width: 96%;
+    width: 100%;
     
 }
 
@@ -52,8 +65,8 @@ body {
 }
 
 .productCard {
-    width: 260px;
-    max-width: 260px; 
+    width: calc(95%/4);
+    min-width: calc(95%/4);
     height: 300px;
     padding-bottom: 25px;
     margin: 5px; /* Espacio entre los contenedores */
@@ -62,7 +75,6 @@ body {
     border-radius: 10px;
     background-color: white;
     display: flex; /* Activa Flexbox */
-    flex: 1 1 260px;
     flex-direction: column; /* Alinea los botones en una columna */
     align-items: center; /* Centra los botones horizontalmente */
     overflow: hidden;
@@ -79,6 +91,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
     border-radius: 10px;
     overflow-y: auto;
     width: 100%; /* O un ancho fijo como 1200px */
@@ -87,8 +100,8 @@ body {
 }
 
 .ButtonBox {
-    width: 216px; /* Ancho fijo para la ButtonBox */
-    height: auto;
+    width: 260px; /* Ancho fijo para la ButtonBox */
+    height: 260px;
     margin-top: 4px;
     margin-left: 0px;
     background-color: white;
@@ -137,12 +150,37 @@ body {
 #finishBuy{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     border-radius: 5px;
-    height: 40px;
+    height: 30px;
     width: 300px;
-    padding: 15px;
+    padding-bottom: 10px;
+}
+#total {
+    width: 100%;
+    line-height: 0;
+}
 
+#clearCart {
+    border-radius: 5px;
+    width: 12%;
+    margin: 1px;
+}
+#clearCart:hover{
+    background-color: tomato;
+    color: white;
+    transition: 0.2s ease;
+}
+
+
+#buy {
+    border-radius: 15px;
+    width: 30%;
+    margin: 1px;
+}
+#buy:hover{
+    background-color: green;
+    color: white;
+    transition: 0.2s ease;
 }
 
 #contentCart {
@@ -171,15 +209,17 @@ body {
 }
 
 .devicesInCart img {
-    width: auto;
-    height: auto;
-    float: right;
+    width: 75px;
+    height: 75px;
     border-radius: 5px;
 }
 
 
 .textBox p {
+    width: 200px;
+    display: flex;
     color: black;
+    font-size: small;
     font-weight: 500;
     line-height: 0.005; /* Ajusta el espaciado entre líneas */
     margin: 0px; /* Cambiado a 0 para evitar superposición */
@@ -198,8 +238,8 @@ body {
 
 .add-quit {
 
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     line-height: 0.8;
     border-radius: 20px;
     border-color: black;
